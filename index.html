@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<!-- load SystemJS itself from CDN -->
+		<script src="./libs//systemJs/s.min.js"></script>
+		<script src="./libs//systemJs//systemjs-babel.js"></script>
+		<link rel="stylesheet" type="text/css" href="./index.css" />
+	</head>
+	<body>
+		<div id="container"></div>
+	</body>
+	<script type="systemjs-importmap" >
+		{
+			"imports": {
+				"main": "./src/index.ts",
+				"three": "./libs/threeJs/build/three.module.js",
+                "three/addons/": "./libs/threeJs/examples/jsm/"
+			}
+		}
+	</script>
+	<!-- load a locally hosted module -->
+	<script src="./libs/systemJs/customLoader.js"></script>
+	<script type="systemjs-module" src="import:main"></script>
+</html>
